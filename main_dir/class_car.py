@@ -11,4 +11,3 @@ class Car:
         print("Color: " + self.color)
         print("Year: " + self.year)
         print("The cost of this car: " + self.price)
-
