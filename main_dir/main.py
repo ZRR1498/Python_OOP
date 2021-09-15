@@ -23,6 +23,7 @@ def repit(ans):
         ans = input(quest_link)
         ans = ans.upper()
     return ans
+
 quest_link = "Show dealers link? (Yes or No): "
 answer = repit(input("Show dealers link? (Yes or No): "))
 
@@ -30,19 +31,21 @@ def car_link():
     if answer == "YES":
         quest = input("Write brand of car: ")
         quest = quest.lower()
-        quest_link = "Show dealers link? (Yes or No): "
-        answer_link = repit(input("Show dealers link? (Yes or No): "))
+        global quest_link
+        quest_link = "Print link? (Yes or No): "
+        answer_link = repit(input("Print link? (Yes or No): "))
         if answer_link == "YES":
             print("https://www."+ str(quest) + ".com")
         elif answer_link != "YES":
             print("Good luck!")
+        quest_link = "Show others? (Yes or No): "
+        answer_end = repit(input("Show others? (Yes or No): "))
+        if answer_end == "YES":
+            car_link()
+        elif answer_end != "YES":
+            print("Good luck!")
     else:
-        print("Good luck!")
-    quest_link = "How others? (Yes or No): "
-    answer_link = repit(input("Show others? (Yes or No): "))
-    if answer_link == "YES":
-        car_link()
-    elif answer_link != "YES":
-        print("Good luck!")
+        print("Good bye!")
+
 
 car_link()
