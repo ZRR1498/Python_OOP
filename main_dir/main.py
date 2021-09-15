@@ -11,21 +11,23 @@ print("-------------------------")
 car_2.characters()
 print("Number of wheels: ", car_2.wheels)
 
-def repit():
-    answer = 0
-    while answer != "YES" or "NO":
-        answer = input("Show dealers link? (Yes or No): ")
-        answer = answer.upper()
-        if answer == "YES" or "NO":
-            return answer
+def repit(ans):
+    ans = ans.upper()
+    while ans != "YES" and ans != "NO":
+        ans = input("Show dealers link? (Yes or No): ")
+        ans = ans.upper()
+    return ans
 
-answer = repit()
-if answer == "YES" or "NO":
-    if answer == "YES":
-        quest = input("Write brand of car: ")
-        quest = quest.lower()
-        answer = input("Show dealers link? (Yes or No): ")
-        on_display = ("https://www."+ str(quest) + ".com")
+answer = repit(input("Show dealers link? (Yes or No): "))
 
-    elif answer == "NO":
+if answer == "YES":
+    quest = input("Write brand of car: ")
+    quest = quest.lower()
+    answer_link = input("Show dealers link? (Yes or No): ")
+    answer_link = answer_link.upper()
+    if answer_link == "YES":
+        print("https://www."+ str(quest) + ".com")
+    elif answer_link != "YES":
+        print("Good luck!")
+else:
         print("Good luck!")
