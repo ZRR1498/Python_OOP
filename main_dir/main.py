@@ -49,4 +49,3 @@ def car_link():
 
 
 car_link()
-car_link()
